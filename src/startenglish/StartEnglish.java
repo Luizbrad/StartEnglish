@@ -15,11 +15,6 @@ import javafx.stage.StageStyle;
 import javax.swing.JOptionPane;
 import startenglish.db.util.Banco;
 
-
-/**
- *
- * 
- */
 public class StartEnglish extends Application
 {   
     @Override
