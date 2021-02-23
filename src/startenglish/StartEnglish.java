@@ -18,7 +18,7 @@ import startenglish.db.util.Banco;
 
 /**
  *
- * @author guilh
+ * 
  */
 public class StartEnglish extends Application
 {   
