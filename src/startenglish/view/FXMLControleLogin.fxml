@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.4463157894736842" maxHeight="610.0" maxWidth="738.0" minHeight="425.0" minWidth="738.0" orientation="VERTICAL" prefHeight="472.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startenglish.FXMLControleLoginController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="345.0" prefWidth="736.0" style="-fx-background-color: black;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="61.0" prefWidth="736.0" spacing="50.0" style="-fx-background-color: #FF7F27;">
+               <children>
+                  <JFXButton fx:id="btNovo" onAction="#evtNovo" style="-fx-font-weight: bold;" text="Novo" />
+                  <JFXButton fx:id="btAlterar" onAction="#evtAlterar" style="-fx-font-weight: bold;" text="Alterar" />
+                  <JFXButton fx:id="btExcluir" onAction="#evtExcluir" style="-fx-font-weight: bold;" text="Excluir" />
+                  <JFXButton fx:id="btConfirmar" onAction="#evtConfirmar" style="-fx-font-weight: bold;" text="Confirmar" />
+                  <JFXButton fx:id="btCancelar" onAction="#evtCancelar" style="-fx-font-weight: bold;" text="Cancelar" />
+               </children>
+            </HBox>
+            <AnchorPane fx:id="pnDados" layoutX="-4.0" layoutY="61.0" prefHeight="335.0" prefWidth="745.0" style="-fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <children>
+                  <Label alignment="CENTER" layoutX="25.0" layoutY="25.0" prefHeight="17.0" prefWidth="698.0" style="-fx-background-color: #FF7F27; -fx-font-weight: bold;" text="Dados do Login" textAlignment="CENTER" />
+                  <JFXTextField fx:id="txUsuario" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="25.0" layoutY="57.0" prefHeight="25.0" prefWidth="297.0" promptText="Usuário" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXPasswordField fx:id="txSenha" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="337.0" layoutY="57.0" prefHeight="25.0" prefWidth="290.0" promptText="Senha" style="-fx-background-color: #BEBEBE;">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXPasswordField>
+                  <ComboBox fx:id="cbStatus" layoutX="636.0" layoutY="57.0" prefHeight="25.0" prefWidth="89.0" promptText="Status" style="-fx-background-color: #bebebe;" />
+                  <JFXComboBox fx:id="cbFuncionario" focusColor="#ff7f27" labelFloat="true" layoutX="25.0" layoutY="102.0" prefHeight="25.0" prefWidth="698.0" promptText="Funcionário" unFocusColor="WHITE" />
+                  <JFXTextField fx:id="txNivel" disable="true" editable="false" layoutX="216.0" layoutY="90.0" prefHeight="25.0" prefWidth="47.0" visible="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="246.0" prefWidth="736.0" style="-fx-background-color: black;">
+         <children>
+            <AnchorPane fx:id="pnBusca" layoutY="-1.0" prefHeight="61.0" prefWidth="736.0" style="-fx-background-color: #FF7F27;">
+               <children>
+                  <JFXTextField fx:id="txPesquisa" layoutX="173.0" layoutY="23.0" prefHeight="25.0" prefWidth="259.0" />
+                  <JFXButton fx:id="btPesquisar" layoutX="624.0" layoutY="23.0" onAction="#evtPesquisar" style="-fx-font-weight: bold;" text="Pesquisar" />
+                  <ComboBox fx:id="cbPesquisa" layoutX="14.0" layoutY="23.0" onAction="#evtcbPesquisa" prefWidth="150.0" style="-fx-background-color: #FF7F27;" />
+                  <ComboBox fx:id="cbStatusPesquisa" layoutX="448.0" layoutY="23.0" prefWidth="150.0" style="-fx-background-color: #FF7F27;" />
+                  <Label layoutX="14.0" layoutY="1.0" text="Opções de filtro" textFill="#171717" />
+                  <Label layoutX="475.0" layoutY="2.0" text="Status" textFill="#171717" />
+                  <Label layoutX="185.0" layoutY="1.0" text="Filtro texto" textFill="#171717" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tabela" layoutY="53.0" onMouseClicked="#evtClicarTabela" prefHeight="207.0" prefWidth="736.0" style="-fx-background-color: black; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <columns>
+                  <TableColumn fx:id="tabelaUser" prefWidth="282.0" style="-fx-background-color: #bebebe; -fx-font-weight: bold;" text="Usuário" />
+                  <TableColumn fx:id="tabelaSenha" minWidth="0.0" prefWidth="226.0" style="-fx-background-color: #bebebe;" text="Senha" />
+                  <TableColumn fx:id="tabelaStatus" prefWidth="120.0" style="-fx-background-color: #bebebe;" text="Status" />
+                  <TableColumn fx:id="tabelaNivel" prefWidth="96.0" style="-fx-background-color: #bebebe;" text="Nível" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

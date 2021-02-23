@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5876152832674572" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="761.0" prefWidth="919.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startenglish.FXMLEncomendaLivrosController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="428.0" prefWidth="736.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="61.0" prefWidth="917.0" spacing="50.0" style="-fx-background-color: #FF7F27; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <children>
+                  <JFXButton fx:id="btNovo" onAction="#evtNovo" style="-fx-font-weight: bold;" text="Novo" />
+                  <JFXButton fx:id="btVer" onAction="#evtVer" style="-fx-font-weight: bold;" text="Ver" />
+                  <JFXButton fx:id="btConfirmar" onAction="#evtConfirmar" style="-fx-font-weight: bold;" text="Confirmar" />
+                  <JFXButton fx:id="btCancelar" onAction="#evtCancelar" style="-fx-font-weight: bold;" text="Cancelar" />
+               </children>
+            </HBox>
+            <AnchorPane fx:id="pndados" layoutX="-3.0" layoutY="61.0" prefHeight="386.0" prefWidth="919.0" style="-fx-background-color: black; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <children>
+                  <Label alignment="CENTER" layoutX="12.0" layoutY="14.0" prefHeight="17.0" prefWidth="894.0" style="-fx-background-color: #FF7F27; -fx-font-weight: bold;" text="Dados do Encomenda" textAlignment="CENTER" />
+                  <JFXTextField fx:id="txtID" disable="true" focusColor="#ff7f27" labelFloat="true" layoutX="39.0" layoutY="98.0" prefHeight="25.0" prefWidth="56.0" promptText="ID" style="-fx-background-color: #bebebe;" unFocusColor="BLACK" />
+                  <ComboBox fx:id="cbLivro" layoutX="37.0" layoutY="136.0" onAction="#evtSelLivro" prefHeight="25.0" prefWidth="238.0" promptText="Livro" style="-fx-font-weight: bold; -fx-background-color: #bebebe;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <JFXTextField fx:id="txtValorUni" alignment="CENTER" editable="false" focusColor="#ff7f27" labelFloat="true" layoutX="39.0" layoutY="181.0" prefHeight="25.0" prefWidth="127.0" promptText="Valor Unitário (*)" style="-fx-background-color: #bebebe; -fx-font-weight: bold;" unFocusColor="BLACK">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="txtQtd" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="185.0" layoutY="181.0" prefHeight="25.0" prefWidth="90.0" promptText="Quantidade (*)" style="-fx-background-color: #bebebe; -fx-font-weight: bold;" unFocusColor="BLACK">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXButton fx:id="btRemover" layoutX="64.0" layoutY="235.0" onAction="#evtRemove" prefHeight="25.0" prefWidth="92.0" style="-fx-font-weight: bold; -fx-background-color: #FF7F27; -fx-background-radius: 10px;" text="Remover" />
+                  <JFXButton fx:id="btAdicionar" layoutX="156.0" layoutY="235.0" onAction="#evtAdd" prefHeight="25.0" prefWidth="92.0" style="-fx-font-weight: bold; -fx-background-color: #FF7F27; -fx-background-radius: 10px;" text="Adicionar" />
+                  <TableView fx:id="tabelaItens" layoutX="302.0" layoutY="43.0" prefHeight="254.0" prefWidth="592.0" style="-fx-background-color: black; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+                     <columns>
+                        <TableColumn fx:id="tbItensLivro" prefWidth="393.0" style="-fx-background-color: #bebebe;" text="Livro" />
+                        <TableColumn fx:id="tbItensQtd" prefWidth="102.0" style="-fx-background-color: #bebebe;" text="Quantidade" />
+                        <TableColumn fx:id="tbItensValor" prefWidth="84.0" style="-fx-background-color: #bebebe;" text="Valor" />
+                     </columns>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                     <effect>
+                        <InnerShadow />
+                     </effect>
+                  </TableView>
+                  <JFXTextField fx:id="txtFornecedor" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="37.0" layoutY="272.0" prefHeight="25.0" prefWidth="238.0" promptText="Fornecedor (*)" style="-fx-background-color: #bebebe; -fx-font-weight: bold;" unFocusColor="BLACK">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXTextField fx:id="txtValorTotal" alignment="CENTER" editable="false" focusColor="#ff7f27" labelFloat="true" layoutX="743.0" layoutY="337.0" prefHeight="25.0" prefWidth="151.0" promptText="Valor Total" style="-fx-background-color: #bebebe; -fx-font-weight: bold;" unFocusColor="BLACK">
+                     <cursor>
+                        <Cursor fx:constant="NONE" />
+                     </cursor></JFXTextField>
+                  <ComboBox fx:id="cbFuncionario" layoutX="37.0" layoutY="336.0" prefWidth="150.0" promptText="Funcionário (*)" style="-fx-background-color: #bebebe; -fx-font-weight: bold;" />
+                  <JFXDatePicker fx:id="dtPEncomenda" defaultColor="BLACK" layoutX="221.0" layoutY="336.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #bebebe; -fx-font-weight: bold;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXDatePicker>
+                  <JFXDatePicker fx:id="dtPPrevisao" defaultColor="BLACK" layoutX="478.0" layoutY="336.0" prefHeight="25.0" prefWidth="229.0" style="-fx-background-color: #bebebe; -fx-font-weight: bold;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXDatePicker>
+                  <Label layoutX="220.0" layoutY="313.0" text="Data Encomenda (*)" textFill="WHITE" />
+                  <Label layoutX="477.0" layoutY="314.0" text="Previsão de Chegada (*)" textFill="WHITE" />
+                  <Label layoutX="66.0" layoutY="55.0" text="Campos Obrigatórios" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="39.0" layoutY="54.0" text="(*)" textFill="#ff0101">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="917.0" style="-fx-background-color: black;">
+         <children>
+            <AnchorPane layoutY="-5.0" prefHeight="86.0" prefWidth="917.0" style="-fx-background-color: #FF7F27;">
+               <children>
+                  <JFXTextField fx:id="txPesquisa" alignment="CENTER" layoutX="29.0" layoutY="45.0" prefHeight="31.0" prefWidth="213.0" promptText="Insira aqui o filtro">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor></JFXTextField>
+                  <JFXDatePicker fx:id="dtpdataini" defaultColor="BLACK" layoutX="304.0" layoutY="45.0" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #BEBEBE;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXDatePicker>
+                  <JFXDatePicker fx:id="dtpdatafim" defaultColor="BLACK" layoutX="441.0" layoutY="45.0" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #BEBEBE;">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXDatePicker>
+                  <JFXComboBox fx:id="comboBox" layoutX="594.0" layoutY="45.0" onAction="#evtComboBox" prefHeight="31.0" prefWidth="192.0">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXComboBox>
+                  <JFXButton fx:id="btPesquisar" layoutX="812.0" layoutY="37.0" onAction="#evtPesquisa" prefHeight="25.0" prefWidth="92.0" style="-fx-font-weight: bold;" text="Pesquisar">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <JFXButton layoutX="135.0" layoutY="6.0" onAction="#evtLimparFiltros" prefHeight="31.0" prefWidth="127.0" style="-fx-font-weight: bold;" text="Limpar Filtros">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></JFXButton>
+                  <Label layoutX="43.0" layoutY="25.0" text="Filtro texto" textFill="#171717" />
+                  <Label layoutX="316.0" layoutY="21.0" text="A partir de" textFill="#171717" />
+                  <Label layoutX="594.0" layoutY="25.0" text="Opções de filtro" textFill="#171717" />
+                  <Label layoutX="491.0" layoutY="25.0" text="Até" textFill="#171717" />
+                  <Label layoutX="397.0" layoutY="4.0" text="Filtro Data" textFill="#171717" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tabela" layoutY="80.0" onMouseClicked="#evtClickTabela" prefHeight="233.0" prefWidth="919.0" style="-fx-background-color: black; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <columns>
+                  <TableColumn fx:id="tabelaID" prefWidth="87.0" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" text="ID" />
+                  <TableColumn fx:id="tabelaFornecedor" prefWidth="193.0" style="-fx-background-color: #bebebe;" text="Fornecedor" />
+                  <TableColumn fx:id="tabelaFuncionario" minWidth="0.0" prefWidth="210.0" style="-fx-background-color: #BEBEBE;" text="Funcionário" />
+                  <TableColumn fx:id="tabelaDataEncomenda" prefWidth="149.0" style="-fx-background-color: #BEBEBE;" text="Data Encomenda" />
+                  <TableColumn fx:id="tabelaPrevisao" prefWidth="156.0" style="-fx-background-color: #BEBEBE;" text="Previsão Chegada" />
+                  <TableColumn fx:id="tabelaValor" prefWidth="113.0" style="-fx-background-color: #bebebe;" text="Valor" />
+               </columns>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

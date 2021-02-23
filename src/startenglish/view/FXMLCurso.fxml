@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.5620542082738944" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" orientation="VERTICAL" prefHeight="672.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startenglish.FXMLCursosController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="736.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="61.0" prefWidth="841.0" spacing="50.0" style="-fx-background-color: #FF7F27; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <children>
+                  <JFXButton fx:id="btNovo" onAction="#evtNovo" style="-fx-font-weight: bold;" text="Novo" />
+                  <JFXButton fx:id="btAlterar" onAction="#evtAlterar" style="-fx-font-weight: bold;" text="Alterar" />
+                  <JFXButton fx:id="btExcluir" onAction="#evtExcluir" style="-fx-font-weight: bold;" text="Excluir" />
+                  <JFXButton fx:id="btConfirmar" onAction="#evtConfirmar" style="-fx-font-weight: bold;" text="Confirmar" />
+                  <JFXButton fx:id="btCancelar" onAction="#evtCancelar" style="-fx-font-weight: bold;" text="Cancelar" />
+               </children>
+            </HBox>
+            <AnchorPane fx:id="pndados" layoutY="61.0" prefHeight="311.0" prefWidth="841.0" style="-fx-background-color: black; -fx-border-width: 5; -fx-border-color: orange;">
+               <children>
+                  <JFXTextField fx:id="txId" alignment="CENTER" disable="true" editable="false" layoutX="57.0" layoutY="94.0" prefHeight="25.0" prefWidth="89.0" promptText="ID" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txNomeCurso" alignment="CENTER" layoutX="208.0" layoutY="94.0" prefHeight="31.0" prefWidth="401.0" promptText="Nome do Curso" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txPreco" alignment="CENTER" layoutX="631.0" layoutY="94.0" prefHeight="31.0" prefWidth="181.0" promptText="Preço" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXDatePicker fx:id="dtpDataLanc" layoutX="101.0" layoutY="179.0" prefHeight="31.0" prefWidth="213.0" style="-fx-background-color: #BEBEBE;" />
+                  <JFXCheckBox fx:id="cEncerrar" layoutX="358.0" layoutY="185.0" onMouseClicked="#evtEncerrar" text="Encerrar curso?" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </JFXCheckBox>
+                  <JFXDatePicker fx:id="dtpDataEnc" disable="true" layoutX="544.0" layoutY="182.0" prefHeight="31.0" prefWidth="192.0" style="-fx-background-color: #BEBEBE;" />
+                  <JFXTextField fx:id="txEtapa" alignment="CENTER" layoutX="29.0" layoutY="253.0" prefHeight="31.0" prefWidth="192.0" promptText="Etapa" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txDescricao" alignment="CENTER" layoutX="318.0" layoutY="253.0" prefHeight="31.0" prefWidth="494.0" promptText="Descrição" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <Label alignment="CENTER" layoutX="26.0" layoutY="14.0" prefHeight="21.0" prefWidth="790.0" style="-fx-background-color: #FF7F27; -fx-font-weight: bold;" text="Dados do curso" textAlignment="CENTER" />
+                  <Label layoutX="57.0" layoutY="70.0" text="ID" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="208.0" layoutY="70.0" text="Nome do curso" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="631.0" layoutY="70.0" text="Preço" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="76.0" layoutY="70.0" text="*" textFill="#da0606">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="318.0" layoutY="70.0" text="*" textFill="#da0606">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="671.0" layoutY="70.0" text="*" textFill="#da0606">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="346.0" layoutY="48.0" text="*" textFill="#da0606">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="358.0" layoutY="48.0" text="Campos obrigatórios" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="101.0" layoutY="157.0" text="Data de lançamento" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="249.0" layoutY="157.0" prefHeight="25.0" prefWidth="1.0" text="*" textFill="#da0606">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="318.0" layoutY="225.0" text="Descrição" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="541.0" layoutY="157.0" text="Data de Encerramento" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="32.0" layoutY="225.0" text="Etapa" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="72.0" layoutY="225.0" prefHeight="25.0" prefWidth="1.0" text="*" textFill="#da0606">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="699.0" layoutY="157.0" prefHeight="25.0" prefWidth="1.0" text="*" textFill="#da0606">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="235.0" prefWidth="674.0" style="-fx-background-color: black;">
+         <children>
+            <AnchorPane fx:id="pnpesquisa" layoutY="-1.0" prefHeight="61.0" prefWidth="842.0" style="-fx-background-color: #FF7F27;">
+               <children>
+                  <AnchorPane layoutX="4.0" prefHeight="89.0" prefWidth="841.0">
+                     <children>
+                        <JFXTextField fx:id="txPesquisa" alignment="CENTER" layoutY="47.0" prefHeight="31.0" prefWidth="213.0" promptText="Insira aqui o filtro" />
+                        <JFXDatePicker fx:id="dtpdataini" layoutX="232.0" layoutY="47.0" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #BEBEBE;" />
+                        <JFXDatePicker fx:id="dtpdatafim" layoutX="369.0" layoutY="47.0" prefHeight="31.0" prefWidth="127.0" style="-fx-background-color: #BEBEBE;" />
+                        <JFXComboBox fx:id="comboBox" layoutX="522.0" layoutY="47.0" onAction="#evtComboBox" prefHeight="31.0" prefWidth="192.0" />
+                        <JFXCheckBox fx:id="cPesquisar" layoutX="653.0" layoutY="6.0" text="Pesquisar encerrados?" />
+                        <JFXButton fx:id="btPesquisar" layoutX="740.0" layoutY="39.0" onAction="#evtPesquisa" prefHeight="25.0" prefWidth="92.0" style="-fx-font-weight: bold;" text="Pesquisar" />
+                        <JFXButton layoutX="86.0" layoutY="1.0" onAction="#evtLimparFiltros" prefHeight="31.0" prefWidth="127.0" style="-fx-font-weight: bold;" text="Limpar Filtros" />
+                        <Label layoutY="27.0" text="Filtro texto" textFill="#171717" />
+                        <Label layoutX="244.0" layoutY="23.0" text="A partir de" textFill="#171717" />
+                        <Label layoutX="522.0" layoutY="27.0" text="Opções de filtro" textFill="#171717" />
+                        <Label layoutX="419.0" layoutY="27.0" text="Até" textFill="#171717" />
+                        <Label layoutX="325.0" layoutY="6.0" text="Filtro Data" textFill="#171717" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tableview" layoutY="83.0" onMouseClicked="#clicktabela" prefHeight="207.0" prefWidth="843.0" style="-fx-background-color: black; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <columns>
+                  <TableColumn fx:id="tabelaNomeCurso" prefWidth="198.0" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" text="Nome do Curso" />
+                  <TableColumn fx:id="tabelaEtapa" prefWidth="115.0" style="-fx-background-color: #BEBEBE;" text="Etapa" />
+                  <TableColumn fx:id="tabelaData" prefWidth="171.0" style="-fx-background-color: #BEBEBE;" text="Data de Lançamento" />
+                  <TableColumn fx:id="tabelaEncerramento" prefWidth="184.0" style="-fx-background-color: #BEBEBE;" text="Data de Encerramento" />
+                  <TableColumn fx:id="tabelaPreco" minWidth="0.0" prefWidth="164.0" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" text="Preço" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane dividerPositions="0.6359143327841845" maxHeight="610.0" maxWidth="738.0" minHeight="610.0" minWidth="738.0" orientation="VERTICAL" prefHeight="610.0" prefWidth="738.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="startenglish.FXMLFuncionarioController">
+   <items>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="426.0" prefWidth="736.0" style="-fx-background-color: black;">
+         <children>
+            <HBox alignment="CENTER" prefHeight="61.0" prefWidth="736.0" spacing="50.0" style="-fx-background-color: #FF7F27;">
+               <children>
+                  <JFXButton fx:id="btNovo" onAction="#evtNovo" style="-fx-font-weight: bold;" text="Novo" />
+                  <JFXButton fx:id="btAlterar" onAction="#evtAlterar" style="-fx-font-weight: bold;" text="Alterar" />
+                  <JFXButton fx:id="btExcluir" onAction="#evtExcluir" style="-fx-font-weight: bold;" text="Excluir" />
+                  <JFXButton fx:id="btConfirmar" onAction="#evtConfirmar" style="-fx-font-weight: bold;" text="Confirmar" />
+                  <JFXButton fx:id="btCancelar" onAction="#evtCancelar" style="-fx-font-weight: bold;" text="Cancelar" />
+               </children>
+            </HBox>
+            <AnchorPane fx:id="pnDados" layoutX="-4.0" layoutY="61.0" prefHeight="335.0" prefWidth="745.0" style="-fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <children>
+                  <Label alignment="CENTER" layoutX="29.0" layoutY="14.0" prefHeight="17.0" prefWidth="698.0" style="-fx-background-color: #FF7F27; -fx-font-weight: bold;" text="Dados do Funcionário" textAlignment="CENTER" />
+                  <JFXTextField fx:id="txIdFunc" alignment="CENTER" disable="true" editable="false" focusColor="#ff7f27" labelFloat="true" layoutX="26.0" layoutY="57.0" prefHeight="25.0" prefWidth="35.0" promptText="ID" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txNome" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="67.0" layoutY="57.0" prefHeight="25.0" prefWidth="297.0" promptText="Nome (*)" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txRg" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="370.0" layoutY="57.0" prefHeight="25.0" prefWidth="174.0" promptText="RG" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txCpf" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="548.0" layoutY="57.0" prefHeight="25.0" prefWidth="174.0" promptText="CPF (*)" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txEmail" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="25.0" layoutY="97.0" prefHeight="25.0" prefWidth="411.0" promptText="E-mail" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txTelefone" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="442.0" layoutY="97.0" prefHeight="25.0" prefWidth="277.0" promptText="Telefone" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <CheckBox fx:id="checkProf" layoutX="337.0" layoutY="128.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="82.0" style="-fx-background-color: black;" text="Professor" textFill="#bebebe" />
+                  <Label alignment="CENTER" layoutX="24.0" layoutY="166.0" prefHeight="17.0" prefWidth="698.0" style="-fx-background-color: #FF7F27; -fx-font-weight: bold;" text="Endereço do Aluno" textAlignment="CENTER" />
+                  <JFXTextField fx:id="txId" alignment="CENTER" disable="true" editable="false" focusColor="#ff7f27" labelFloat="true" layoutX="25.0" layoutY="194.0" prefHeight="25.0" prefWidth="89.0" promptText="ID" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txRua" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="134.0" layoutY="194.0" prefHeight="25.0" prefWidth="390.0" promptText="Rua" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txNumero" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="544.0" layoutY="194.0" prefHeight="25.0" prefWidth="183.0" promptText="Número" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txCEP" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="25.0" layoutY="236.0" onMouseExited="#evtValidaCEP" prefHeight="25.0" prefWidth="237.0" promptText="CEP (*)" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txBairro" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="278.0" layoutY="236.0" prefHeight="25.0" prefWidth="450.0" promptText="Bairro" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <JFXTextField fx:id="txCidade" alignment="CENTER" focusColor="#ff7f27" labelFloat="true" layoutX="25.0" layoutY="277.0" prefHeight="25.0" prefWidth="237.0" promptText="Cidade" style="-fx-background-color: #BEBEBE; -fx-font-weight: bold;" />
+                  <Label layoutX="508.0" layoutY="276.0" text="(*)" textFill="#f8f8f8">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="544.0" layoutY="276.0" text="Campos obrigatórios" textFill="#bebebe">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="177.0" prefWidth="736.0" style="-fx-background-color: black;">
+         <children>
+            <AnchorPane fx:id="pnBusca" layoutY="-1.0" prefHeight="43.0" prefWidth="736.0" style="-fx-background-color: #FF7F27;">
+               <children>
+                  <JFXTextField fx:id="txPesquisa" focusColor="WHITE" layoutX="5.0" layoutY="7.0" prefHeight="25.0" prefWidth="411.0" />
+                  <JFXButton fx:id="btPesquisar" layoutX="625.0" layoutY="9.0" onAction="#evtPesquisar" prefHeight="25.0" prefWidth="89.0" style="-fx-font-weight: bold;" text="Pesquisar" />
+                  <ComboBox fx:id="cbBusca" layoutX="427.0" layoutY="9.0" onAction="#evtcbBusca" prefHeight="25.0" prefWidth="174.0" promptText="Busca por" style="-fx-background-color: #FF7F27;" />
+               </children>
+            </AnchorPane>
+            <TableView fx:id="tabela" layoutY="36.0" onMouseClicked="#evtClicarTabela" prefHeight="183.0" prefWidth="736.0" style="-fx-background-color: black; -fx-border-width: 5; -fx-border-color: #FF7F27;">
+               <columns>
+                  <TableColumn fx:id="tabelaNome" prefWidth="176.0" style="-fx-background-color: #bebebe; -fx-font-weight: bold;" text="Nome" />
+                  <TableColumn fx:id="tabelaCPF" minWidth="0.0" prefWidth="161.0" style="-fx-background-color: #bebebe;" text="CPF" />
+                  <TableColumn fx:id="tabelaTelefone" prefWidth="162.0" style="-fx-background-color: #bebebe;" text="Telefone" />
+                  <TableColumn fx:id="tabelaEmail" prefWidth="152.0" style="-fx-background-color: #bebebe;" text="E-mail" />
+                  <TableColumn fx:id="tabelaCheck" prefWidth="73.0" style="-fx-background-color: #bebebe;" text="Professor" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
